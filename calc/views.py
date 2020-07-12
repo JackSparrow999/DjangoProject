@@ -5,3 +5,7 @@ from django.http import HttpResponse
 
 def home(request):
     return render(request, 'home.html', {'name': "Ronaq"})
+
+def add(request):
+    res = int(request.POST['num1']) + int(request.POST['num2'])
+    return render(request, 'add.html', {'sum': res})
